@@ -7,7 +7,7 @@ var generaPiva = function(input) {
 	}
 
 	// input string da 10 cifre
-	if(input != undefined && input != null && input.length == 10) {
+	if(validateInput(input) && input.length == 10) {
 		var t = calculateT(input);
 		var c = (10-t)%10;
 		return input + c;
@@ -17,7 +17,8 @@ var generaPiva = function(input) {
 }
 
 var verificaPiva = function(input) {
-	if(input != undefined && input != null && input.length == 11) {
+	// input == stringa da 11 cifre
+	if(validateInput(input) && input.length == 11) {
 		var t = calculateT(input);
 		return t == 0;
 	}
@@ -69,4 +70,8 @@ var calculateT = function(input) {
 	var t = (x+y)%10;
 
 	return t;
+}
+
+var validateInput = function(input) {
+	return !isNaN(input);
 }
