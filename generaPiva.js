@@ -1,6 +1,12 @@
 
 
 var generaPiva = function(input) {
+	// no input
+	if(input == null) {
+		input = Math.random().toString(10).slice(-10);
+	}
+
+	// input string da 10 cifre
 	if(input != undefined && input != null && input.length == 10) {
 	
 		var nums = intArrayFromString(input);
