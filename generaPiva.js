@@ -11,11 +11,8 @@ var generaPiva = function(input) {
 	
 		var nums = intArrayFromString(input);
 		var xy = calculateXandY(nums);
+		var t = calculateT(xy);
 		
-		var x = xy[0];
-		var y = xy[1];
-		
-		var t = (x+y)%10;
 		var c = (10-t)%10;
 		
 		return input + c;
@@ -29,11 +26,7 @@ var verificaPiva = function(input) {
 		
 		var nums = intArrayFromString(input);
 		var xy = calculateXandY(nums);
-		
-		var x = xy[0];
-		var y = xy[1];
-		
-		var t = (x+y)%10;
+		var t = calculateT(xy);
 		
 		if(t == 0) {
 			return true;
@@ -75,4 +68,13 @@ var calculateXandY = function(nums) {
 	}
 	
 	return [x,y];
+}
+
+var calculateT = function(xy) {
+	var x = xy[0];
+	var y = xy[1];
+	
+	var t = (x+y)%10;
+
+	return t;
 }
