@@ -8,13 +8,8 @@ var generaPiva = function(input) {
 
 	// input string da 10 cifre
 	if(input != undefined && input != null && input.length == 10) {
-	
-		var nums = intArrayFromString(input);
-		var xy = calculateXandY(nums);
-		var t = calculateT(xy);
-		
+		var t = calculateT(input);
 		var c = (10-t)%10;
-		
 		return input + c;
 	}
 	
@@ -23,15 +18,8 @@ var generaPiva = function(input) {
 
 var verificaPiva = function(input) {
 	if(input != undefined && input != null && input.length == 11) {
-		
-		var nums = intArrayFromString(input);
-		var xy = calculateXandY(nums);
-		var t = calculateT(xy);
-		
-		if(t == 0) {
-			return true;
-		}
-		
+		var t = calculateT(input);
+		return t == 0;
 	}
 	
 	return false;
@@ -70,7 +58,11 @@ var calculateXandY = function(nums) {
 	return [x,y];
 }
 
-var calculateT = function(xy) {
+var calculateT = function(input) {
+
+	var nums = intArrayFromString(input);
+	var xy = calculateXandY(nums);
+
 	var x = xy[0];
 	var y = xy[1];
 	
