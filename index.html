@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>IT VAT Generator - by Nrc</title>
+        <script type="text/javascript" src="it-vat-generator.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css"></link>
+    </head>
+    <body>
+        <h3>IT VAT Generator / Verifier</h3>
+        <div class="line">
+            <button id="generate-button">Generate</button>
+            <input id="generate-result" type="text"></input>
+        </div>
+        <div class="line">
+            <input id="verify-input" type="text"></input>
+            <button id="verify-button">Verify</button>
+            <span id="verify-result"></span>
+        </div>
+    </body>
+</html>
+<script>
+    (function () {
+        var vatGen = new ITVatGenerator();
+
+        document.getElementById('generate-button').addEventListener("click", function () {
+            var result = vatGen.generate();
+            document.getElementById('generate-result').value = result;
+            document.getElementById('verify-input').value = result;
+        });
+
+        document.getElementById('verify-button').addEventListener("click", function () {
+            var inputToVerify = document.getElementById('verify-input').value;
+            var isValid = vatGen.verify(inputToVerify);
+            var result = isValid ? "&#x2714;" : "&#x2718;";
+            document.getElementById('verify-result').innerHTML = result;
+            document.getElementById('verify-result').style.color = isValid ? "green" : "red";
+        });
+    })();
+</script>

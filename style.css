@@ -1,0 +1,15 @@
+body {
+}
+
+button {
+    width: 90px;
+}
+
+.line {
+    margin: 5px;
+}
+
+#verify-result {
+    position: fixed;
+    margin-left: 5px;
+}
