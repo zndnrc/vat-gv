@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -34,17 +35,38 @@
             </ul>
         </header>
         <section>
-            <h3>IT VAT Generator / Verifier</h3>
-            <div class="line">
-                <button id="generate-button">Generate</button>
-                <input id="generate-result" type="text"></input>
-            </div>
-            <div class="line">
-                <input id="verify-input" type="text"></input>
-                <button id="verify-button">Verify</button>
-                <span id="verify-result"></span>
-            </div>
+            <h3>Generatore / Verifica PIva</h3>
+            <form class="pure-form pure-form-aligned" onsubmit="return false;">
+            
+            <fieldset>
+                <legend>Genera</legend>
 
+                
+                <input id="generate-result" type="text">
+
+
+                <button id="generate-button" class="pure-button">Genera</button>
+            </fieldset>
+                
+            </form>
+            <form class="pure-form pure-form-aligned" onsubmit="return false;">
+            
+            
+            <fieldset>
+                <legend>Verifica</legend>
+
+                
+
+
+                <input id="verify-input" type="text" onkeyup="verifica()"></input>
+                <button id="verify-button" class="pure-button">Verifica</button>
+                <span id="verify-result"></span>
+            </fieldset>
+            
+            </form>
+
+            <script src="javascripts/scale.fix.js"></script>
+            <script src="javascripts/it-vat-generator.js"></script>
             <script>
                 (function () {
                     var vatGen = new ITVatGenerator();
@@ -52,6 +74,7 @@
                         var result = vatGen.generate();
                         document.getElementById('generate-result').value = result;
                         document.getElementById('verify-input').value = result;
+                        document.getElementById('verify-result').innerHTML = "";
                     });
                     document.getElementById('verify-button').addEventListener("click", function () {
                         var inputToVerify = document.getElementById('verify-input').value;
@@ -60,9 +83,17 @@
                         document.getElementById('verify-result').innerHTML = result;
                         document.getElementById('verify-result').style.color = isValid ? "green" : "red";
                     });
+                    function verifica() {
+                        var inputToVerify = document.getElementById('verify-input').value;
+                        var isValid = vatGen.verify(inputToVerify);
+                        var result = isValid ? "&#x2714;" : "&#x2718;";
+                        document.getElementById('verify-result').innerHTML = result;
+                        document.getElementById('verify-result').style.color = isValid ? "green" : "red";
+                    };
                 })();
             </script>
-            <script src="javascripts/scale.fix.js"></script>
+
+
 
 </body>
 
