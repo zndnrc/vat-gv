@@ -69,7 +69,7 @@
             <script src="https://rawgit.com/zndnrc/genera-piva/master/it-vat-generator.js"></script>
             <script>
                 (function () {
-                    var vatGen = new ITVatGenerator();
+                    var vatGen = new ITVatGV();
                     document.getElementById('generate-button').addEventListener("click", function () {
                         var result = vatGen.generate();
                         document.getElementById('generate-result').value = result;
