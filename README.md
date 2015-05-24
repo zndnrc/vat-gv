@@ -1,4 +1,4 @@
-# vat-generator
+# vat-gv
 A simple javascript italian format VAT generator / verifier
 
 
