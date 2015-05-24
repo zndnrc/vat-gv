@@ -8,12 +8,12 @@ Algorithm from http://it.wikipedia.org/wiki/Partita_IVA
 
 Add the script to your page
 ```html
-<script type="text/javascript" src="it-vat-generator-min.js"></script>
+<script type="text/javascript" src="it-vat-gv-min.js"></script>
 ```
 
 Create a new instance of ITVatGenerator, and use it like that
 ```javascript
-var pg = new ITVatGenerator();
+var pg = new ITVatGV();
 
 var vat = pg.generate();
 
