@@ -1,4 +1,4 @@
-# genera-piva
+# vat-generator
 A simple javascript italian format VAT generator / verifier
 
 
