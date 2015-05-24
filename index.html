@@ -33,8 +33,7 @@
         document.getElementById('verify-button').addEventListener("click", function () {
             var inputToVerify = document.getElementById('verify-input').value;
             var isValid = vatGen.verify(inputToVerify);
-            var result = isValid ? "&#x2714;" : "&#x2718;";
-            document.getElementById('verify-result').innerHTML = result;
+            document.getElementById('verify-result').innerHTML = isValid ? "&#x2714;" : "&#x2718;";
             document.getElementById('verify-result').style.color = isValid ? "green" : "red";
         });
     })();
