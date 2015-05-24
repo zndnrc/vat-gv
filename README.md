@@ -11,7 +11,7 @@ Add the script to your page
 <script type="text/javascript" src="it-vat-gv-min.js"></script>
 ```
 
-Create a new instance of ITVatGenerator, and use it like that
+Create a new instance of ITVatGV, and use it like that
 ```javascript
 var pg = new ITVatGV();
 
