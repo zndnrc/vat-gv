@@ -6,13 +6,13 @@
  * Algorithm from http://it.wikipedia.org/wiki/Partita_IVA
  * 
  * Usage:
- * var pg = new ITVatGenerator();
+ * var pg = new ITVatGV();
  * var vat = pg.generate();
  * var isValid = pg.verify(vat);
  *
  */
 
-var ITVatGenerator = function() {
+var ITVatGV = function() {
 
     var generateVat = function(input) { // input == 10 digits string
 	    if(input == null) {
