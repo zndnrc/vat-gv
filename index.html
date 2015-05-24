@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8" />
         <title>IT VAT Generator - by Nrc</title>
-        <script type="text/javascript" src="it-vat-generator.js"></script>
+        <script type="text/javascript" src="it-vat-gv-min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css"></link>
     </head>
     <body>
@@ -22,7 +22,7 @@
 </html>
 <script>
     (function () {
-        var vatGen = new ITVatGenerator();
+        var vatGen = new ITVatGV();
 
         document.getElementById('generate-button').addEventListener("click", function () {
             var result = vatGen.generate();
