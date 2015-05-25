@@ -14,8 +14,6 @@ Add the script to your page
 Create a new instance of ITVatGV, and use it like that
 ```javascript
 var pg = new ITVatGV();
-
 var vat = pg.generate();
-
 var isValid = pg.verify(vat);
 ```
